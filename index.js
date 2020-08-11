@@ -30,7 +30,7 @@ client.on('message', message =>{
         client.commands.get('help').execute(message, client, args);
     } 
 
-    if(command === 'p1v1app'){
+    if(command === 'apply'){
         client.commands.get('application').execute(message, client, args);
     } 
 
