@@ -1,25 +1,15 @@
 const Discord = require('discord.js');
-const bot = new Discord.Client();
 
 module.exports = {
-    name: 'helpp',
-    description: "hi",
-    execute(message, args){
-        const helpembed = new Discord.MessageEmbed()
-        helpembed.setTitle('Help:')
-        helpembed.setColor("RANDOM")
-        helpembed.setDescription('Commands:')
-        helpembed.addField('>mildlyinfuriating', 'Posts an image from r/mildlyinfuriating.')
-        helpembed.addField('>die', 'Gives you the option to be shot or be stabbed.')
-        helpembed.addField('>unfunnymeme', 'Posts an image from r/comedycemetery.')
-        helpembed.addField('>blursedimage', 'Posts an image from r/blursedimages.')
-        helpembed.addField('>help', 'Gives you a list of commands.')
-        helpembed.addField('>server', 'Gives you the discord server invite for Holy Meme support.')
-        helpembed.addField('>meme', 'Sends a random meme from r/memes.')
-        helpembed.addField('>kill', 'Shoots the user you mention.')
-        helpembed.addField('>info', 'Tells you information about the bot. Prefix, etc.')
-        helpembed.addField('>cute', 'Sends a random image from r/aww.')
-        helpembed.setAuthor('Bot Developer: CustomNate#0001', 'https://i.imgur.com/5USkTEP.gif')
-        message.channel.send(helpembed)
+    name: 'help',
+    description: "helps you",
+    execute(message, client, args){
+        const commands = new Discord.MessageEmbed()
+        commands.setTitle('Commands:')
+        commands.addField('-help', 'Gives you a list of commands.')
+        commands.addField('-p1v1app', 'Sends you the link to become an Official Clan on Pistol 1v1.')
+        commands.addField('-credits', 'Shows the bot credits.')
+        commands.setColor('#63ace5')
+        message.channel.send(commands)
     }
 } 
