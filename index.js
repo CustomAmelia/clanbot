@@ -35,7 +35,7 @@ client.on('message', message =>{
     } 
 
     if(command === 'credits'){
-        client.commands.get('credit').execute(message, client, args);
+        client.commands.get('credit').execute(message, client, args)
     } 
 })
 client.login(process.env.token);
