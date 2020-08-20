@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const filterwebhook = new Discord.WebhookClient('746106311690682479', 'AihY-SOWd8-3Fjnt1Sj7_Ao01Djb5brGzYTW16mMeKZd-U435u6OEU4Eys-8USuZyjDa')
-const badwords = ['testing']
+const badwords = ['fag', 'fagg', 'faggo', 'faggot', 'nig', 'nigg', 'nigga', 'nigge', 'nigger']
 
 const prefix = '-';
 
@@ -16,6 +16,7 @@ client.on('message', message => {
     epicembed.setTitle("Filter Alert.")
     epicembed.addField('User who said the word:', `${message.author}`)
     epicembed.addField('Message:', `${message.content}`)
+    epicembed.setColor("RANDOM")
     epicembed.setAuthor(`iG Studios Filter`, 'https://i.imgur.com/Ywo5GEv.png')
     filterwebhook.send(epicembed)
     message.reply("Please do not say that!")
