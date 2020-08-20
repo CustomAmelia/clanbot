@@ -1,6 +1,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const filterwebhook = new Discord.WebhookClient('746106311690682479', 'AihY-SOWd8-3Fjnt1Sj7_Ao01Djb5brGzYTW16mMeKZd-U435u6OEU4Eys-8USuZyjDa')
+const badwords = ['testing']
 
 const prefix = '-';
 
@@ -9,7 +10,8 @@ const fs = require('fs');
 client.commands = new Discord.Collection();
 
 client.on('message', message => {
-    if (message.content.includes === 'testing') {
+    for (var i = 0; i < badwords.length; i++) {
+    if (message.content.includes(badwords[i])) {
     const epicembed = new Discord.MessageEmbed()
     epicembed.setTitle("Filter Alert.")
     epicembed.addField('User who said the word:', `${message.author}`)
@@ -18,6 +20,7 @@ client.on('message', message => {
     filterwebhook.send(epicembed)
     message.reply("Please do not say that!")
     message.delete()
+    }
     }
 })
 
