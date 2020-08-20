@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const filterwebhook = new Discord.WebhookClient('746106311690682479', 'AihY-SOWd8-3Fjnt1Sj7_Ao01Djb5brGzYTW16mMeKZd-U435u6OEU4Eys-8USuZyjDa')
-const badwords = ['fag', 'faggot',  'nigg', 'nigga', 'nigge', 'nigger', 'coon']
+const badwords = ['fag', 'faggot',  'nigga', 'nigge', 'nigger']
 
 const prefix = '-';
 
@@ -19,7 +19,7 @@ client.on('message', message => {
     epicembed.setColor("RANDOM")
     epicembed.setAuthor(`iG Studios Filter`, 'https://i.imgur.com/Ywo5GEv.png')
     filterwebhook.send(epicembed)
-    message.reply("Please do not say that!")
+    message.reply("Please do not say that! This may be a false positive.")
     message.delete()
     }
     }
