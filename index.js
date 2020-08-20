@@ -11,7 +11,7 @@ client.commands = new Discord.Collection();
 
 client.on('message', message => {
     for (var i = 0; i < badwords.length; i++) {
-    if (message.content.includes(badwords[i])) {
+    if (message.content === (badwords[i])) {
     const epicembed = new Discord.MessageEmbed()
     epicembed.setTitle("Filter Alert.")
     epicembed.addField('User who said the word:', `${message.author}`)
