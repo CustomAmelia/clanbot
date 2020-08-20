@@ -8,6 +8,19 @@ const fs = require('fs');
 
 client.commands = new Discord.Collection();
 
+client.on('message', message => {
+    if (message.content.includes === 'testing') {
+    const epicembed = new Discord.MessageEmbed()
+    epicembed.setTitle("Filter Alert.")
+    epicembed.addField('User who said the word:', `${message.author}`)
+    epicembed.addField('Message:', `${message.content}`)
+    epicembed.setAuthor(`iG Studios Filter`, 'https://i.imgur.com/Ywo5GEv.png')
+    filterwebhook.send(epicembed)
+    message.reply("Please do not say that!")
+    message.delete()
+    }
+})
+
 const commandFiles = fs.readdirSync('./commands/').filter(file => file.endsWith('.js'));
 for(const file of commandFiles){
     const command = require(`./commands/${file}`);
@@ -19,19 +32,6 @@ client.once('ready', () => {
     console.log('Bot is online!');
     client.user.setActivity("iGottic's Youtube Channel.  -help for commands.", { type: "WATCHING"})
 });
-
-client.on('message', message =>{
-    if(message.content.includes === 'fag') {
-        const epicembed = new Discord.MessageEmbed()
-        epicembed.setTitle("Filter Alert.")
-        epicembed.addField('User who said the word:', `${message.author}`)
-        epicembed.addField('Message:', `${message.content}`)
-        epicembed.setAuthor(`iG Studios Filter`, 'https://i.imgur.com/Ywo5GEv.png')
-        filterwebhook.send(epicembed)
-        message.reply("Please do not say that!")
-        message.delete()
-    }
-})
 
 client.on('message', message =>{
     if(!message.content.startsWith(prefix) || message.author.bot) return;
