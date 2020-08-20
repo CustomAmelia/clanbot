@@ -19,6 +19,11 @@ client.once('ready', () => {
     client.user.setActivity("iGottic's Youtube Channel.  -help for commands.", { type: "WATCHING"})
 });
 
+client.on('message', message =>{
+    if(message.content === 'fag') {
+        message.delete()
+    }
+})
 
 client.on('message', message =>{
     if(!message.content.startsWith(prefix) || message.author.bot) return;
