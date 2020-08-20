@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
+const filterwebhook = new Discord.WebhookClient('746106311690682479', 'AihY-SOWd8-3Fjnt1Sj7_Ao01Djb5brGzYTW16mMeKZd-U435u6OEU4Eys-8USuZyjDa')
 
 const prefix = '-';
 
@@ -20,7 +21,14 @@ client.once('ready', () => {
 });
 
 client.on('message', message =>{
-    if(message.content === 'fag') {
+    if(message.content.includes === 'fag') {
+        const epicembed = new Discord.MessageEmbed()
+        epicembed.setTitle("Filter Alert.")
+        epicembed.addField('User who said the word:', `${message.author}`)
+        epicembed.addField('Message:', `${message.content}`)
+        epicembed.setAuthor(`iG Studios Filter`, 'https://i.imgur.com/Ywo5GEv.png')
+        filterwebhook.send(epicembed)
+        message.reply("Please do not say that!")
         message.delete()
     }
 })
