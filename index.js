@@ -64,19 +64,6 @@ client.on('message', message => {
 })
 
 client.on('message', message => {
-    if(message.channel.type == "text" && message.channel.name.toLowerCase() == "📷╎media") {
-        if (message.content.includes("http://")) {
-            const epic2embed = new Discord.MessageEmbed()
-            epic2embed.setTitle("Filter Alert: Link.")
-            epic2embed.addField('User who said the word:', `${message.author}`)
-            epic2embed.addField('Message:', `${message.content}`)
-            epic2embed.setColor("RANDOM")
-            message.reply("No links.")
-            filterwebhook.send(epic2embed)
-    }
-}
-})
-client.on('message', message => {
         for (var i = 0; i < badwords.length; i++) {
         if (message.content.includes(badwords[i])) {
         const epicembed = new Discord.MessageEmbed()
