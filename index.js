@@ -30,6 +30,7 @@ client.on('message', message => {
         epicembed.addField('Message:', `${message.content}`)
         epicembed.setColor("RANDOM")
         message.reply("Please do not say that!")
+        filterwebhook.send(epicembed)
         message.delete()
         }
         }
