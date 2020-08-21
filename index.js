@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const filterwebhook = new Discord.WebhookClient('746106311690682479', 'AihY-SOWd8-3Fjnt1Sj7_Ao01Djb5brGzYTW16mMeKZd-U435u6OEU4Eys-8USuZyjDa')
-const badwords = ['faggot',  'nigga', 'nigger', 'testing']
+const badwords = ['faggot',  'nigga', 'nigger']
 
 const prefix = '-';
 
