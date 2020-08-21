@@ -25,32 +25,6 @@ client.on('message', message => {
     }
 })
 
-client.on('message', message => {
-
-    const filter = (reaction, user) => {
-        return ['✅'].includes(reaction.emoji.name)
-    };
-
-    if(message.channel.type == "text" && message.channel.name.toLowerCase() == "⛔╎ingame-reports"){
-        message.react("✅");
-
-        message.awaitReactions(filter, { max: 1, time: 2.592e+8, errors: ['time'] })
-	.then(collected => {
-		const reaction = collected.first();
-
-		if (reaction.emoji.name === '✅') {
-			message.channel.send(`Report: ${reaction.message.content} is being taken care of by ${reaction.message.user}`);
-		}
-    })
-    
-    .catch(collected => {
-		message.reply('Report Expired');
-    });
-    
-    }
-
-})
-
 const commandFiles = fs.readdirSync('./commands/').filter(file => file.endsWith('.js'));
 for(const file of commandFiles){
     const command = require(`./commands/${file}`);
