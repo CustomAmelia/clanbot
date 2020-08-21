@@ -31,6 +31,7 @@ client.on('message', message => {
                 epic2embed.setColor("RANDOM")
                 message.reply("No links.")
                 filterwebhook.send(epic2embed)
+                message.delete()
         }
     }
 })
@@ -45,6 +46,7 @@ client.on('message', message => {
             epic2embed.setColor("RANDOM")
             message.reply("No links.")
             filterwebhook.send(epic2embed)
+            message.delete()
     }
 }
 })
@@ -59,6 +61,7 @@ client.on('message', message => {
             epic2embed.setColor("RANDOM")
             message.reply("No links.")
             filterwebhook.send(epic2embed)
+            message.delete()
     }
 }
 })
