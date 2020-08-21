@@ -22,20 +22,18 @@ client.once('ready', () => {
 });
 
 client.on('message', message => {
-    for (var i = 0; i < badwords.length; i++) {
-    if (message.content.includes === (badwords[i])) {
-    const epicembed = new Discord.MessageEmbed()
-    epicembed.setTitle("Filter Alert.")
-    epicembed.addField('User who said the word:', `${message.author}`)
-    epicembed.addField('Message:', `${message.content}`)
-    epicembed.setColor("RANDOM")
-    epicembed.setAuthor(`iG Studios Filter`, 'https://i.imgur.com/Ywo5GEv.png')
-    filterwebhook.send(epicembed)
-    message.reply("Please do not say that! This may be a false positive.")
-    message.delete()
-    }
-    }
-})
+        for (var i = 0; i < badwords.length; i++) {
+        if (message.content.includes(badwords[i])) {
+        const epicembed = new Discord.MessageEmbed()
+        epicembed.setTitle("Filter Alert.")
+        epicembed.addField('User who said the word:', `${message.author}`)
+        epicembed.addField('Message:', `${message.content}`)
+        epicembed.setColor("RANDOM")
+        message.reply("Please do not say that!")
+        message.delete()
+        }
+        }
+    })
 
 client.on('message', message =>{
     if(!message.content.startsWith(prefix) || message.author.bot) return;
