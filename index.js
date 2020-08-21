@@ -39,7 +39,40 @@ client.on('message', message => {
 
 client.on('message', message => {
     if(message.channel.type == "text" && message.channel.name.toLowerCase() == "🌐╎eng-chat") {
+        if (message.content.includes("https ://")) {
+            const epic2embed = new Discord.MessageEmbed()
+            epic2embed.setTitle("Filter Alert: Link")
+            epic2embed.addField('User who said the word:', `${message.author}`)
+            epic2embed.addField('Message:', `${message.content}`)
+            epic2embed.setColor("RANDOM")
+            epic2embed.addField("Channel:", "#🌐╎eng-chat ")
+            message.reply("No links.")
+            filterwebhook.send(epic2embed)
+            message.delete()
+    }
+}
+})
+
+
+client.on('message', message => {
+    if(message.channel.type == "text" && message.channel.name.toLowerCase() == "🌐╎eng-chat") {
         if (message.content.includes("http://")) {
+            const epic2embed = new Discord.MessageEmbed()
+            epic2embed.setTitle("Filter Alert: Link")
+            epic2embed.addField('User who said the word:', `${message.author}`)
+            epic2embed.addField('Message:', `${message.content}`)
+            epic2embed.addField("Channel:", "#🌐╎eng-chat ")
+            epic2embed.setColor("RANDOM")
+            message.reply("No links.")
+            filterwebhook.send(epic2embed)
+            message.delete()
+    }
+}
+})
+
+client.on('message', message => {
+    if(message.channel.type == "text" && message.channel.name.toLowerCase() == "🌐╎eng-chat") {
+        if (message.content.includes("http ://")) {
             const epic2embed = new Discord.MessageEmbed()
             epic2embed.setTitle("Filter Alert: Link")
             epic2embed.addField('User who said the word:', `${message.author}`)
@@ -71,7 +104,39 @@ client.on('message', message => {
 
 client.on('message', message => {
     if(message.channel.type == "text" && message.channel.name.toLowerCase() == "🌐╎other-chat") {
+        if (message.content.includes("http ://")) {
+            const epic2embed = new Discord.MessageEmbed()
+            epic2embed.setTitle("Filter Alert: Link")
+            epic2embed.addField('User who said the word:', `${message.author}`)
+            epic2embed.addField('Message:', `${message.content}`)
+            epic2embed.addField("Channel:", "#🌐╎other-chat ")
+            epic2embed.setColor("RANDOM")
+            message.reply("No links.")
+            filterwebhook.send(epic2embed)
+            message.delete()
+    }
+}
+})
+
+client.on('message', message => {
+    if(message.channel.type == "text" && message.channel.name.toLowerCase() == "🌐╎other-chat") {
         if (message.content.includes("https://")) {
+            const epic2embed = new Discord.MessageEmbed()
+            epic2embed.setTitle("Filter Alert: Link")
+            epic2embed.addField('User who said the word:', `${message.author}`)
+            epic2embed.addField('Message:', `${message.content}`)
+            epic2embed.addField("Channel:", "#🌐╎other-chat ")
+            epic2embed.setColor("RANDOM")
+            message.reply("No links.")
+            filterwebhook.send(epic2embed)
+            message.delete()
+    }
+}
+})
+
+client.on('message', message => {
+    if(message.channel.type == "text" && message.channel.name.toLowerCase() == "🌐╎other-chat") {
+        if (message.content.includes("https ://")) {
             const epic2embed = new Discord.MessageEmbed()
             epic2embed.setTitle("Filter Alert: Link")
             epic2embed.addField('User who said the word:', `${message.author}`)
