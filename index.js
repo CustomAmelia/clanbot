@@ -157,6 +157,7 @@ client.on('message', message => {
         epicembed.setTitle("Filter Alert: Filtered Word")
         epicembed.addField('User who said the word:', `${message.author}`)
         epicembed.addField('Message:', `${message.content}`)
+        epic2embed.addField("Channel:", message.channel.name)
         epicembed.setColor("RANDOM")
         message.reply("Please do not say that!")
         filterwebhook.send(epicembed)
