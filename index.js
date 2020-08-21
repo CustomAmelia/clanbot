@@ -34,14 +34,19 @@ client.on('message', message => {
     if(message.channel.type == "text" && message.channel.name.toLowerCase() == "⛔╎ingame-reports"){
         message.react("✅");
 
-        message.awaitReactions(filter, { max: 1, time: 9999999999999999, errors: ['time'] })
+        message.awaitReactions(filter, { max: 1, time: 2.592e+8, errors: ['time'] })
 	.then(collected => {
 		const reaction = collected.first();
 
 		if (reaction.emoji.name === '✅') {
 			message.channel.send(`Report: ${reaction.message.content} is being taken care of by ${reaction.message.user}`);
 		}
-	})
+    })
+    
+    .catch(collected => {
+		message.reply('Report Expired');
+    });
+    
     }
 
 })
