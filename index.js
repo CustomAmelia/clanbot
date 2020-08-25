@@ -1,7 +1,5 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const filterwebhook = new Discord.WebhookClient('746106311690682479', 'AihY-SOWd8-3Fjnt1Sj7_Ao01Djb5brGzYTW16mMeKZd-U435u6OEU4Eys-8USuZyjDa')
-const badwords = ['faggot',  'nigga', 'nigger']
 
 const prefix = '-';
 
@@ -20,22 +18,6 @@ client.once('ready', () => {
     console.log('Bot is online!');
     client.user.setActivity("iGottic's Youtube Channel.  -help for commands.", { type: "WATCHING"})
 });
-
-client.on('message', message => {
-        for (var i = 0; i < badwords.length; i++) {
-        if (message.content.includes(badwords[i])) {
-        const epicembed = new Discord.MessageEmbed()
-        epicembed.setTitle("Filter Alert: Filtered Word")
-        epicembed.addField('User who said the word:', `${message.author}`)
-        epicembed.addField('Message:', `${message.content}`)
-        epicembed.addField("Channel:", message.channel)
-        epicembed.setColor("RANDOM")
-        message.reply("Please do not say that!")
-        filterwebhook.send(epicembed)
-        message.delete()
-        }
-        }
-    })
 
 client.on('message', message =>{
     if(!message.content.startsWith(prefix) || message.author.bot) return;
