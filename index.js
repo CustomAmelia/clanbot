@@ -32,9 +32,12 @@ client.on('message', message =>{
     if(command === 'apply'){
         client.commands.get('application').execute(message, client, args);
     } 
-
     if(command === 'credits'){
         client.commands.get('credit').execute(message, client, args)
+    } 
+
+    if(command === 'slowmode'){
+        client.commands.get('slowmode').execute(message, client, args)
     } 
 })
 client.login(process.env.token);
