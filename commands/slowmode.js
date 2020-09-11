@@ -6,6 +6,6 @@ module.exports = {
     execute(message, client, args){
         if (message.author.hasPermission('KICK_MEMBERS')) {
             message.channel.rateLimitPerUser(5)
-        }
+        };
     }
 }
