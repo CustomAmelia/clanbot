@@ -4,8 +4,8 @@ module.exports = {
     name: 'slowmode',
     description: "lolok",
     execute(message, client, args){
-        if (message.author.hasPermission('KICK_MEMBERS')) {
+        if (message.author.id === '498097065264676864') {
             message.channel.rateLimitPerUser(5)
-        };
+        }
     }
 }
