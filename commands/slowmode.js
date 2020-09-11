@@ -5,7 +5,7 @@ module.exports = {
     description: "lolok",
     execute(message, client, args){
         if (message.author.id === '498097065264676864') {
-            message.channel.rateLimitPerUser(5)
+            message.channel.setRateLimitPerUser(5)
         }
     }
 }
