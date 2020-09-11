@@ -6,10 +6,18 @@ module.exports = {
     execute(message, client, args){
         if (message.member.hasPermission('KICK_MEMBERS')) {
 
-            if (!args) return;
-            if (!args[0]) return;
+            let reason = args[1]
 
-            message.channel.setRateLimitPerUser(args[0])
+            if (!args) return;
+            if (!reason) {
+                reason == 'No reason provided!'
+            }
+            if (!args[0]) return;
+            if (!args[1]) {
+                reason == 'No reason provided!'
+            }
+
+            message.channel.setRateLimitPerUser(args[0], reason)
         }
     }
 }
