@@ -6,7 +6,7 @@ module.exports = {
     execute(message, client, args){
         const creditss = new Discord.MessageEmbed()
         creditss.setTitle('Credits:')
-        creditss.addField('Bot Developer', 'CustomNate#0001')
+        creditss.addField('Bot Developer', 'CustomNate#0494')
         creditss.setColor('#63ace5')
         message.channel.send(creditss)
     }
