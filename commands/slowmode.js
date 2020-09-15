@@ -13,10 +13,10 @@ module.exports = {
             }
 
             if (args[0].length === 3) {
-                message.channel.setRateLimitPerUser(args[0])
+                message.channel.send('You cannot make a channels slowmode more than 5 minutes.')
             }
 
-            if (args[0].length > 3) {
+            if (args[0].length < 3) {
             message.channel.setRateLimitPerUser(args[0])
             }
         }
