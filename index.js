@@ -39,9 +39,5 @@ client.on('message', message =>{
     if(command === 'slowmode'){
         client.commands.get('slowmode').execute(message, client, args)
     } 
-
-    if(command === 'check'){
-        client.commands.get('check').execute(message, client, args)
-    } 
 })
 client.login(process.env.token);
