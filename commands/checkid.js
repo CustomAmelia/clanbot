@@ -10,6 +10,6 @@ module.exports = {
         }
 
         const api = `https://verify.eryn.io/api/roblox/${args[0]}`
-        snekfetch.get(api).then(console.log)
+        snekfetch.get(api).then(console.log(Response))
     }
 } 
