@@ -5,7 +5,7 @@ module.exports = {
     name: 'check',
     description: "test",
     execute(message, client, args){
-        const api = `https://verify.eryn.io/api/roblox/498097065264676864`
+        const api = `https://verify.eryn.io/api/user/498097065264676864`
         snekfetch.get(api).then(r => console.log(r))
     }
 } 
